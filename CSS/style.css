@@ -58,11 +58,14 @@ header nav ul li {
     position: relative;
     list-style: none;
     display: inline;
+}
+.navButtons{    
     transition: all 0.2s;
     font-size: 1rem;
 }
-header nav ul li:hover {
-    font-size: 1.2rem;
+.navButtons:hover {
+    color: #53435B;
+    text-decoration: underline;
 }
 
 header nav ul li a {
@@ -82,15 +85,48 @@ main{
 /*Home*/
 .mainHome{
     margin: 0px;
-    background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada2.jpeg);
     background-size: cover;
     display: flex;
     align-items:center;
-    height: 100vh;
+    height: 80vh;
+    animation-name: imgRotate;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
 
+@keyframes imgRotate {
+    0% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    25% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada2.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    50% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    75% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada4.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    100% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada5.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
 }
 .mainHome h1{
-
     font-size: 5em;
     color: white;
     font-weight: 600;
