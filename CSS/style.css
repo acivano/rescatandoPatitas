@@ -84,6 +84,7 @@ main{
     height: 80vh;
     align-items:flex-end;
     animation-name: imgRotate;
+    background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
     animation-iteration-count: infinite;
     animation-duration: 10s;
 }
