@@ -1,0 +1,13 @@
+.seccion_datos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 0.5px solid #00000000;
+    margin-bottom: 2rem;
+    align-items: center;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    width: 15rem;    
+}
+.imgCard{
+    width: -webkit-fill-available;
+}

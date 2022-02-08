@@ -1,0 +1,52 @@
+main{
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+}
+#titulo{
+    font-size: 4rem;
+    color: white;
+}
+.mainHome{
+    margin-top: 5rem;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    height: 80vh;
+    align-items:flex-end;
+    animation-name: imgRotate;
+    background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+@keyframes imgRotate {
+    0% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    25% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada2.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    50% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    75% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada4.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+    100% {
+        background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada5.jpeg);
+        background-size: cover;
+        display: flex;
+        align-items:center;
+    }
+}

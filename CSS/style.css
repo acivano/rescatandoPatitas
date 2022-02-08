@@ -1,41 +1,41 @@
-.cuerpo{
+.cuerpo{/*OK*/
     font-family: 'Arvo', serif !important;
 }
-#logo{
+#logo{/*OK*/
     width: 12rem;
     height: auto;
     padding: 0;
     cursor: pointer;
 }
-.txtColor{
+.txtColor{/*OK*/
     --bs-text-opacity: 1;
     color: black !important;
 }
-.txtColor:hover{
+.txtColor:hover{/*OK*/
     --bs-text-opacity: 1;
     color: #AEA4F2 !important;
     font-size: 1.1rem;
 }
-main{
+main{/*OK*/
     margin-top: 10rem;
     margin-bottom: 4rem;
 }
-.navHover:hover {
+.navHover:hover {/*Ok*/
     color: #AEA4F2;
     text-decoration: underline;
 }
-#titulo{
+#titulo{/*OK*/
     font-size: 4rem;
     color: white;
 }
-.formMap{
+.formMap{/*Ok*/
     min-width: 40% !important;
 }
-#googleMaps{
+#googleMaps{/*Ok*/
     width: 100%;
     height: 30rem;
 }
-.seccion_datos{
+.seccion_datos{/*Ok*/
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -45,15 +45,15 @@ main{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     width: 15rem;    
 }
-.montoDonacion{
+.montoDonacion{/*OK*/
     font-size: 3rem;
     margin-bottom: 1rem;
 }
-.imgCard{
+.imgCard{/*OK*/
     width: -webkit-fill-available;
 }
 
-.focusColor:focus {
+.focusColor:focus {/*Ok*/
     color: #212529;
     background-color: #fff;
     border-color: #AEA4F2;
@@ -61,7 +61,7 @@ main{
     box-shadow: 0 0 0 0.25rem #aea4f294;
 }
 
-.botonDonar{
+.botonPersonalizado{/*Ok*/
     margin-top: 4rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -78,7 +78,7 @@ main{
     padding-right: 1rem;
     text-decoration: none;
 }
-.botonDonar:hover{
+.botonPersonalizado:hover{/*Ok*/
     margin-top: 4rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -96,7 +96,11 @@ main{
     text-decoration: none;
 }
 
-.mainHome{
+#sectionAdopta__table th, #sectionAdopta__table td {/*Ok*/
+    padding: 8px;
+    text-align: center;
+}
+.mainHome{/*OK*/
     margin-top: 5rem;
     background-size: cover;
     display: flex;
@@ -108,14 +112,7 @@ main{
     animation-iteration-count: infinite;
     animation-duration: 10s;
 }
-#sectionAdopta__table th, #sectionAdopta__table td {
-    padding: 8px;
-    text-align: center;
-}
-.footerSize{
-    min-height: 4rem;
-}
-@keyframes imgRotate {
+@keyframes imgRotate {/*Ok*/
     0% {
         background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
         background-size: cover;
@@ -146,4 +143,7 @@ main{
         display: flex;
         align-items:center;
     }
+}
+.footerSize{/*OK*/
+    min-height: 4rem;
 }
