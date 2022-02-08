@@ -1,0 +1,19 @@
+#logo{
+    width: 12rem;
+    height: auto;
+    padding: 0;
+    cursor: pointer;
+}
+.navHover:hover {
+    color: $colorPrincipal;
+    text-decoration: underline;
+}
+.txtColor{
+    --bs-text-opacity: 1;
+    color: black !important;
+}
+.txtColor:hover{
+    --bs-text-opacity: 1;
+    color: $colorPrincipal !important;
+    font-size: 1.1rem;
+}
