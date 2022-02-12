@@ -1,2 +1,22 @@
 $colorPrincipal: #AEA4F2;
 $colorPrincipalSombra: #aea4f294;
+$font:'Arvo', serif !important;
+$estiloBoton:(
+    mt: 4rem,
+    mb: 1rem,
+    centro: center,
+    border: 2px solid $colorPrincipal,
+    radius: 10%,
+    bc: #fff,
+    bgp: $colorPrincipal,
+    colortxt: #111,
+    cursor: pointer,
+    1rem: 1rem,
+    none: none,
+    pointer: pointer
+);
+@mixin tamanio ($width, $height){
+    width: $width;
+    height: $height;
+    
+}

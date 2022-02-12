@@ -1,0 +1,9 @@
+SEO:
+-Se modificaron los títulos de todas las páginas para adaptarlas al contenido de cada una.
+-Se agregó en cada una de las páginas los metadatos de description y keywords
+-Se modificó la página de contacto para reemplazar un div por un section
+
+SASS:
+-Se agregó un mixin para editar el height y width.
+-Se agregó el map estiloBoton con distintos valores para la edición de los botones.
+-Se agregó un extend, para "heredar" las propiedades al hover.
