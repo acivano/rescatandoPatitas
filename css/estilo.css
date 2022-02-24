@@ -129,6 +129,15 @@ main {
   padding: 8px;
   text-align: center; }
 
+.alink {
+  --bs-text-opacity: 1;
+  color: black !important;
+  display: inline; }
+
+.alink:hover {
+  --bs-text-opacity: 1;
+  color: #AEA4F2 !important; }
+
 .montoDonacion {
   font-size: 3rem;
   margin-bottom: 1rem; }

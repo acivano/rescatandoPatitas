@@ -6,3 +6,12 @@
     padding: 8px;
     text-align: center
 }
+.alink{
+    --bs-text-opacity: 1;
+    color: black !important;
+    display:inline;
+}
+.alink:hover{
+    --bs-text-opacity: 1;
+    color: $colorPrincipal !important;
+}
