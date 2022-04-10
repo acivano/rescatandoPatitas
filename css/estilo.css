@@ -8,7 +8,7 @@
   color: #AEA4F2;
   text-decoration: underline; }
 
-.txtColor {
+.txtColor, .txtColorCarrito {
   --bs-text-opacity: 1;
   color: black !important; }
 
@@ -16,6 +16,14 @@
   --bs-text-opacity: 1;
   color: #AEA4F2 !important;
   font-size: 1.1rem; }
+
+.txtColorCarrito:hover {
+  --bs-text-opacity: 1;
+  color: #AEA4F2 !important;
+  font-size: 1.6rem; }
+
+.carrito {
+  font-size: 1.5rem; }
 
 .footerSize {
   min-height: 4rem; }
@@ -139,5 +147,9 @@ main {
   color: #AEA4F2 !important; }
 
 .montoDonacion {
-  font-size: 3rem;
+  font-size: 1rem;
   margin-bottom: 1rem; }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto; }

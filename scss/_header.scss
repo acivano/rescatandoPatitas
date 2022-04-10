@@ -7,7 +7,7 @@
     color: $colorPrincipal;
     text-decoration: underline;
 }
-.txtColor{
+.txtColor, .txtColorCarrito{
     --bs-text-opacity: 1;
     color: black !important;
 }
@@ -15,4 +15,12 @@
     --bs-text-opacity: 1;
     color: $colorPrincipal !important;
     font-size: 1.1rem;
+}
+.txtColorCarrito:hover{
+    --bs-text-opacity: 1;
+    color: $colorPrincipal !important;
+    font-size: 1.6rem;
+}
+.carrito{
+    font-size: 1.5rem;
 }
