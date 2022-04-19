@@ -10,17 +10,19 @@ class Producto{
     }
 
     precioventa(){
-        return Math.round((this.preciolista * 121)) / 100;
+        return (Math.round((this.preciolista * 121)) / 100).toLocaleString("es-CO", {
+            style: "currency",
+            currency: "COP"
+        });;
     }
     venderProducto(){
         if (this.stockdisponible > 0) {
             this.stockdisponible = this.stockdisponible - 1;
         }else{
-            console.log('No se cuenta con stock momentaneamente');
+           // console.log('No se cuenta con stock momentaneamente');
         }
     }
 }
-
 
 const producto1 = new Producto(   "0001",     'Power Comprimido Gato 2 a 3kg Perro 2,5 a 5KG',	    'Perro',     'Power',	158.25,    10   )
 const producto2 = new Producto(   "0002",     'Power Comprimido Perro 10 a 20 KG Gato 6 a 12 KG',	'Gato',     'Power',	236.40,    15   )
@@ -34,51 +36,137 @@ const producto9 = new Producto(   "0009",     'Power Ultra 11 a 20 KG',  'Gato',
 const producto10 = new Producto(  "0010",    'Bayer Advocate Perro 10 a 25 KG',	    'Perro',     'Bayer',	    1000.50,   10  )
 const producto11 = new Producto(  "0011",    'Frontline Spray x 100 ML',   'Gato',      'Frontline',	610.00,   1     )
 
-
+let nodopadre = document.getElementById("contenedorPadre");
 let productoarray = [];
 let productoCarrito = [];
-productoarray.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11);
-let continua = prompt('Desea agregar un producto al carrito? y/n');
+let contenedorProductos = document.getElementById("listaCarrito");
+let precioTotalCarrito = document.getElementById("precioTotalCarrito");
+let cantidadEnCarrito = document.getElementById("cantidadEnCarrito");
+let cantidadACalcular = document.getElementsByClassName("cantidadMenu");
+let totalCarrito = 0;
+let cantidadCarrito = 0;
+loadEventListeners();
 
-productoarray.forEach((el) => {console.log(`El medicamento "${el.nombre}" con código "${el.id}" es para el tipo de mascota: ${el.tipo}. Su precio final es de: $${el.precioventa()}.`)});
-while (continua == 'y') {
 
-    pedirCodigoYCargar();
-    continua = prompt('Desea agregar un nuevo producto? y/n')
+
+function loadEventListeners() {
+    nodopadre.addEventListener('click', agregarProductoCarrito); 
+
+};
+
+function redondeo(numero) {
+    return (Math.round((numero * 100)) / 100).toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP"
+    });;
     
 }
+productoarray.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11);
+completarmercado(productoarray);
 
-function pedirCodigoYCargar() {
-    let productoAcomprar = prompt('Ingrese el código del producto a agregar al carrito');
-
-    let encontrado = false;
-    for (let index = 0; index < productoarray.length && encontrado == false; index++) {
-        if (productoarray[index].id == productoAcomprar) {
-            if (productoarray[index].stockdisponible > 0) {
-                productoarray[index].venderProducto();
-                productoCarrito.push(productoarray[index]);
-                console.log('Agregado exitosamente.');
-                encontrado = true;
-            }else{
-                console.log('Dicho producto no cuenta con stock.')
-            }
-        } else{
-            if (index +1 == productoarray.length && encontrado == false) {
-                console.log("Producto inexistente.")
-            }
+function completarmercado(productoarray) {
+    
+    
+    for (const producto of productoarray) {
+        if(producto.stockdisponible > 0){
+            let nodo = document.createElement("div");
+            nodo.className = "d-flex justify-content-center";
+            nodo.innerHTML = `<div class="seccion_datos">
+                                <div class="card-body d-flex flex-column align-content-center justify-content-center">
+                                    <img class="img-fluid" src="../images/medicamento1.jpeg" alt="Producto1">
+                                    <p class="card-text text-center mt-1 altotexto">${producto.nombre}</p>
+                                    <h3 class="montoDonacion text-center mt-1">${producto.precioventa()}</h3>
+                                    <form class="">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control focusColor text-center cantidadMenu" id="cantidad${producto.id}" placeholder="Cantidad" value="1" min="1" max="10" required>
+                                            <label for="cantidad${producto.id}">Cantidad: </label>
+                                        </div>
+                                    </form>
+                                    <h6 id="idProducto" class="display-none">${producto.id}</h6>
+                                    <a href="" class="botonPersonalizado mt-1">Agregar</a>
+                                    
+                                </div>
+                            </div>`;
+            nodopadre.appendChild(nodo);
         }
-    }
+        
+    };
 }
 
 
-if (productoCarrito.length > 0 ) {
-    console.log('Tu carrito contiene: ')
-    let total = 0;
-    for (let index = 0; index < productoCarrito.length; index++) {
-        console.log(`Medicamento: ${productoCarrito[index].nombre} --> $ ${productoCarrito[index].precioventa()}`); 
-        total = total + productoCarrito[index].precioventa();   
+function agregarProductoCarrito(e) {
+    e.preventDefault();
+    if (e.target.classList.contains('botonPersonalizado')) {
+        const productoSeleccionado = e.target.parentElement;
+        leerContenido(productoSeleccionado);
+        
+    }//else{
+       // if (e.target.classList.contains('form-control')) {
+         //   const  precico = e.target.parentElement.parentElement;
+          //  console.log(precico);
+        //}
+        
+    //}
+}
+
+function leerContenido(producto){
+    const informacionProducto ={
+        id: producto.querySelector('div h6').textContent,
+        nombre: producto.querySelector('div p').textContent,
+        precioVenta: producto.querySelector('div h3').textContent.replace('$','').replace('.','').replace(',','.').trim(),
+        cantidad : producto.querySelector('div form div input').value,
     }
-    console.log(`El total es: $${total}`);
-}else{
-    console.log('Tu carrito contiene 0 productos.');
+    totalCarrito = parseFloat(totalCarrito) + parseFloat(informacionProducto.precioVenta * informacionProducto.cantidad);
+    totalCarrito.toFixed(2);
+
+    const existe = productoCarrito.some(producto => producto.id == informacionProducto.id);
+    if (existe){
+        const productoCarritoNew = productoCarrito.map(producto => {
+            if (producto.id == informacionProducto.id ) {
+                producto.cantidad = parseInt(producto.cantidad)  + parseInt(informacionProducto.cantidad);
+                return producto;
+            }
+            else{
+                return producto;
+            }
+        });
+        productoCarrito= [...productoCarritoNew];
+    }else{
+        productoCarrito = [...productoCarrito, informacionProducto];
+        cantidadCarrito ++;
+
+    };
+    recargarHtml();
+}
+
+function recargarHtml(){
+    limpiarHtml();
+    productoCarrito.forEach(producto => {  
+        const {nombre, precioVenta, cantidad, id} = producto;
+        const item = document.createElement('div');
+        item.classList.add('d-flex', 'justify-content-evenly', 'mb-4');
+        item.innerHTML = `
+                <img class="imgCarrito" src="../images/medicamento1.jpeg" alt="Producto1">
+                    <div class="d-flex flex-column columnaNombreCarrito">
+                        <p class="card-text text-start mt-1 card-text-carrito">${nombre}</p>
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="montoCarrito text-start mt-1 w-50">${redondeo(precioVenta * cantidad)}</p>
+                            <div>
+                                <a class="carrito"> <i class="bi bi-trash"></i></a> 
+                            </div>   
+                        </div>
+                        <div class="form-floating mb-3 w-100 align-self-center">
+                            <input type="number" class="form-control focusColor text-center cantidadCarrito" id="cantidad${id}" placeholder="Cantidad" value="${cantidad}" min="1" max="10" readonly>
+                        </div>
+                    </div>
+        `;
+        contenedorProductos.appendChild(item);
+        precioTotalCarrito.innerHTML = redondeo(totalCarrito);
+        cantidadEnCarrito.innerHTML = cantidadCarrito;
+    });
+}
+
+function limpiarHtml() {
+    contenedorProductos.innerHTML= '';
+    
 }

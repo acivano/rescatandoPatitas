@@ -153,3 +153,39 @@ main {
 .img-fluid {
   max-width: 100%;
   height: auto; }
+
+.altotexto {
+  height: 3rem; }
+
+.notificacion {
+  font-size: 0.7rem; }
+
+.imgCarrito {
+  width: 35%;
+  height: auto; }
+
+.cantidadCarrito {
+  height: 1rem !important;
+  width: 50%;
+  align-content: center;
+  padding-top: 0.7rem !important; }
+
+.carrito {
+  color: black; }
+
+.montoCarrito {
+  font-size: 1.3rem;
+  margin: 0.1rem; }
+
+.columnaNombreCarrito {
+  width: 11rem; }
+
+.card-text-carrito {
+  font-size: 0.8rem;
+  margin: 0; }
+
+.botonPersonalizadoCompra {
+  font-size: 1rem; }
+
+.display-none {
+  display: none; }
