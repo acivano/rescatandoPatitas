@@ -187,6 +187,13 @@ main {
 .botonPersonalizadoCompra {
   font-size: 1rem; }
 
+.botonPersonalizadoCompra:hover {
+  border: 1px solid #AEA4F2;
+  background-color: #AEA4F2;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem; }
+
 .display-none {
   display: none; }
 
@@ -214,3 +221,7 @@ main {
   background-color: green;
   color: #111;
   cursor: pointer; }
+
+.carritoVacio {
+  justify-content: center;
+  align-content: center; }

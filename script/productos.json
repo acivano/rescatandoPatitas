@@ -1,0 +1,119 @@
+[
+    {
+        "id" : "0001",
+        "nombre" : "Power Comprimido Gato 2 a 3kg Perro 2,5 a 5KG",
+        "tipo" : "Gato",
+        "laboratorio" : "Power",
+        "precioventa" : 158.25,
+        "stockdisponible" : 10 ,
+        "imgUrl" : "https://nanolog.vteximg.com.br/arquivos/ids/164453-569-569/power-comprimidos-350-25-a-5-kg.jpg?v=637323152125400000"
+    },
+    {
+        "id" : "0002",
+        "nombre" : "Power Comprimido Perro 10 a 20 KG Gato 6 a 12 KG",
+        "tipo" : "Perro",
+        "laboratorio" : "Power",
+        "precioventa" : 236.40,
+        "stockdisponible" : 15 ,
+        "imgUrl" : "https://www.timberline.com.ar/2555-large_default/power-comprimido-perro-10-a-20-kg.jpg"
+    },
+    {
+        "id" : "0003",
+        "nombre" : "Nexgard 4 a 10 KG",
+        "tipo" : "Perro",
+        "laboratorio" : "Nexgard",
+        "precioventa" : 1234.49,
+        "stockdisponible" : 0 ,
+        "imgUrl" : "https://www.timberline.com.ar/634-large_default/nexgard-4-a-10-kg.jpg"
+    },
+    {
+        "id" : "0004",
+        "nombre" : "Comfortis Perro 4 a 9 KG",
+        "tipo" : "Perro",
+        "laboratorio" : "Comfortis",
+        "precioventa" : 250.50,
+        "stockdisponible" : 20 ,
+        "imgUrl" : "https://puppis.vteximg.com.br/arquivos/ids/157836-600-600/381004.jpg?v=635852862278500000"
+    },
+    {
+        "id" : "0006",
+        "nombre" : "Bravecto Comprimido 20 a 40 Kg",
+        "tipo" : "Perro",
+        "laboratorio" : "Bravecto",
+        "precioventa" : 330.00,
+        "stockdisponible" : 7 ,
+        "imgUrl" : "https://www.timberline.com.ar/3203-large_default/bravecto-comprimido-20-a-40-kg.jpg"
+    }, 
+    {
+        "id" : "0007",
+        "nombre" : "Frontline Plus 2 a 10 KG x 1 pip.",
+        "tipo" : "Perro",
+        "laboratorio" : "Frontline",
+        "precioventa" : 360.00,
+        "stockdisponible" : 15 ,
+        "imgUrl" : "https://www.timberline.com.ar/641-large_default/frontline-plus.jpg"
+    },  
+    {
+        "id" : "0008",
+        "nombre" : "Bayer Advantix 4 a 10 KG",
+        "tipo" : "Perro",
+        "laboratorio" : "Bayer",
+        "precioventa" : 1100.00,
+        "stockdisponible" : 50 ,
+        "imgUrl" : "https://www.timberline.com.ar/660-large_default/bayer-advantix-4-a-10-kg.jpg"
+    },   
+    {
+        "id" : "0009",
+        "nombre" : "Power Ultra 11 a 20 KG",
+        "tipo" : "Perro",
+        "laboratorio" : "Power",
+        "precioventa" : 1020.00,
+        "stockdisponible" : 20 ,
+        "imgUrl" : "https://nanolog.vteximg.com.br/arquivos/ids/159855-569-569/0720-0131.jpg?v=636695105010630000"
+    },  
+    {
+        "id" : "0010",
+        "nombre" : "Bayer Advocate Perro 10 a 25 KG",
+        "tipo" : "Perro",
+        "laboratorio" : "Bayer",
+        "precioventa" : 1000.50,
+        "stockdisponible" : 10 ,
+        "imgUrl" : "https://traviesospetshop.com.ar/wp-content/uploads/2019/11/advocate-perro-10-a-25-500x500.png"
+    }, 
+    {
+        "id" : "0011",
+        "nombre" : "Frontline Spray x 100 ML",
+        "tipo" : "Gato",
+        "laboratorio" : "Frontline",
+        "precioventa" : 610.50,
+        "stockdisponible" : 3 ,
+        "imgUrl" : "https://puppis.vteximg.com.br/arquivos/ids/170175-600-600/373020.png?v=637142631351800000"
+    },
+    {
+        "id" : "0012",
+        "nombre" : "Bayer Advantage más de 4 KG",
+        "tipo" : "Gato",
+        "laboratorio" : "Bayer",
+        "precioventa" : 775.02,
+        "stockdisponible" : 3 ,
+        "imgUrl" : "https://www.timberline.com.ar/1425-home_default/pipeta-advantage-4-kg.jpg"
+    },
+    {
+        "id" : "0013",
+        "nombre" : "Bayer Advantage hasta 4 KG",
+        "tipo" : "Gato",
+        "laboratorio" : "Bayer",
+        "precioventa" : 697.50,
+        "stockdisponible" : 3 ,
+        "imgUrl" : "https://www.timberline.com.ar/995-home_default/pipeta-advantage.jpg"
+    },
+    {
+        "id" : "0014",
+        "nombre" : "Power Met hasta 4 KG",
+        "tipo" : "Gato",
+        "laboratorio" : "Power",
+        "precioventa" : 457.61,
+        "stockdisponible" : 3 ,
+        "imgUrl" : "https://www.timberline.com.ar/991-home_default/pipeta-power-met-hasta-4-kg.jpg"
+    } 
+]

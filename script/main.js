@@ -1,22 +1,24 @@
 // Declaración de clases
 class Producto{
-    constructor(id, nombre, tipo, laboratorio, precioventa, stockdisponible){
+    constructor(id, nombre, tipo, laboratorio, precioventa, stockdisponible, imgUrl){
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
         this.laboratorio = laboratorio;
         this.precioventa = precioventa;
         this.stockdisponible = stockdisponible;
+        this.imgUrl = imgUrl;
     }
 }
 class ProductoCarrito{
-    constructor(id, nombre, tipo, laboratorio, precioVenta, cantidad){
+    constructor(id, nombre, tipo, laboratorio, precioVenta, cantidad, imgUrl){
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
         this.laboratorio = laboratorio;
         this.precioVenta = precioVenta;
         this.cantidad = cantidad;
+        this.imgUrl = imgUrl;
     }
 }
 // Armado de Productos (Momentanemente)
@@ -41,10 +43,25 @@ let precioTotalCarrito = document.getElementById("precioTotalCarrito");
 let cantidadEnCarrito = document.getElementById("cantidadEnCarrito");
 let buttonIniciarCompra = document.getElementById("iniciarCompraBtn");
 let totalCarrito = 0;
-productoarray.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11);
+//productoarray.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11);
+
+const urlProductos = '../script/productos.json'; 
+const obtenerProductos = async ()=> {
+    
+    try {
+        let response = await fetch(urlProductos);
+        productoarray = await response.json();
+        completarmercado(productoarray);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+
 
 //Carga de productos
-completarmercado(productoarray);
 function redondeo(numero) {
     return (Math.round((numero * 100)) / 100).toLocaleString("es-CO", {
         style: "currency",
@@ -58,7 +75,7 @@ function completarmercado(productoarray) {
             nodo.className = "d-flex justify-content-center";
             nodo.innerHTML = `<div class="seccion_datos">
                                 <div class="card-body d-flex flex-column align-content-center justify-content-center">
-                                    <img class="img-fluid" src="../images/medicamento1.jpeg" alt="Producto1">
+                                    <img class="img-fluid" src="${producto.imgUrl}" alt="Producto1">
                                     <p class="card-text text-center mt-1 altotexto">${producto.nombre}</p>
                                     <h3 class="montoDonacion text-center mt-1">${redondeo(producto.precioventa)}</h3>
                                     <form class="">
@@ -84,6 +101,7 @@ function leerContenidoProducto(idProd){
     let laboratorio;
     let cantidad;
     let precioVenta;
+    let imgUrl;
     productoarray.forEach(elem => {
         if (elem.id === idProd) {   
             id = elem.id;
@@ -93,10 +111,11 @@ function leerContenidoProducto(idProd){
             let cantidadProducto = `cantidad${id}`;
             cantidad = parseInt(document.getElementById(cantidadProducto).value);
             document.getElementById(cantidadProducto).value = 1;
-            precioVenta = elem.precioventa;            
+            precioVenta = elem.precioventa;
+            imgUrl = elem.imgUrl;            
         }
     });
-    const productoACarrito = new ProductoCarrito(id, nombre, tipo, laboratorio, precioVenta, cantidad);
+    const productoACarrito = new ProductoCarrito(id, nombre, tipo, laboratorio, precioVenta, cantidad, imgUrl);
     agregarProducto(productoACarrito);
     
 }
@@ -134,12 +153,12 @@ function agregarProducto(informacionProducto) {
 const imprimirDatos = () => {    
     blanquearCarrito();
     totalCarrito = 0;
-    if (verificarStorage() != undefined) {
+    if (verificarStorage() != undefined){
         verificarStorage().forEach(producto => {  
             const item = document.createElement('div');
             item.classList.add('d-flex', 'justify-content-evenly', 'mb-4');
             item.innerHTML += `
-                    <img class="imgCarrito" src="../images/medicamento1.jpeg" alt="Producto1">
+                    <img class="imgCarrito" src="${producto.imgUrl}" alt="Producto1">
                         <div class="d-flex flex-column columnaNombreCarrito">
                             <p class="card-text text-start mt-1 card-text-carrito">${producto.nombre}</p>
                             <div class="d-flex flex-row justify-content-between align-items-end">
@@ -153,11 +172,18 @@ const imprimirDatos = () => {
                             </div>
                         </div>
             `;
+            contenedorProductos.classList.remove("carritoVacio");
             contenedorProductos.appendChild(item);
             totalCarrito = totalCarrito + (producto.precioVenta * producto.cantidad);
         });  
         precioTotalCarrito.innerHTML = redondeo(totalCarrito);
         cantidadEnCarrito.innerHTML = verificarStorage().length;
+        if (verificarStorage().length == 0) {
+            const carritoVacio = document.createElement('div');
+            carritoVacio.innerHTML = '<h5 class="text-center">No hay productos en el carrito.</h5>';
+            contenedorProductos.classList.add("carritoVacio");
+            contenedorProductos.appendChild(carritoVacio);
+        }
     }
 }
 function eliminarElementoCarrito(id) {
@@ -168,9 +194,9 @@ function eliminarElementoCarrito(id) {
         text: "Eliminado con éxito",
         duration: 3000,
         close: true,
-        gravity: "bottom", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "center",
+        stopOnFocus: true,
         className: "toastyExito",
         style: {
         background: "green",
@@ -200,6 +226,7 @@ buttonIniciarCompra.addEventListener("click", () => {
         timer: 3000,
     });
 });
+obtenerProductos();
 imprimirDatos();
 
 
