@@ -23,7 +23,7 @@
         "tipo" : "Perro",
         "laboratorio" : "Nexgard",
         "precioventa" : 1234.49,
-        "stockdisponible" : 0 ,
+        "stockdisponible" : 4 ,
         "imgUrl" : "https://www.timberline.com.ar/634-large_default/nexgard-4-a-10-kg.jpg"
     },
     {
@@ -115,5 +115,14 @@
         "precioventa" : 457.61,
         "stockdisponible" : 3 ,
         "imgUrl" : "https://www.timberline.com.ar/991-home_default/pipeta-power-met-hasta-4-kg.jpg"
+    },
+    {
+        "id" : "0015",
+        "nombre" : "Bravecto Gatos 1,2 a 2,8 Kg",
+        "tipo" : "Gato",
+        "laboratorio" : "Power",
+        "precioventa" : 3704.07,
+        "stockdisponible" : 3 ,
+        "imgUrl" : "https://www.timberline.com.ar/4563-home_default/bravecto-gatos-12-a-28-kg.jpg"
     } 
 ]

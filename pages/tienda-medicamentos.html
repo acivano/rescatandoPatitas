@@ -74,8 +74,49 @@
         <div class="d-flex justify-content-center">
             <h1 class="container">Encontrá el medicamento</h1>
         </div>
+        <div class="d-flex justify-content-evenly mt-5">
+            <form class="formClass">
+                <div class="formClass__fila">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control focusColor" id="nombreProducto" placeholder="Nombre">
+                                <label for="nombre">Medicamento</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <select class="form-select focusColor" id="tipo_mascota" aria-label="Floating label select example">
+                                    <option value="" disabled selected hidden>Seleccione un valor</option>
+                                </select>
+                                <label for="tipo_mascota">Tipo Mascota</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <select class="form-select focusColor" id="laboratorio" aria-label="Floating label select example">
+                                    <option value="" disabled selected hidden>Seleccione un valor</option>
+                                </select>
+                                <label for="laboratorio">Laboratorio</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="formClass__fila container d-flex justify-content-between ">
+                                <div class="col-2">
+                                    <button id="buscarProductos" class="botonPersonalizado botonPersonalizadoCompra m-0">Buscar</button>
+                                </div>
+                                <div class="col-2">
+                                    <button id="limpiarFormProductos" class="botonPersonalizado botonPersonalizadoCompra m-0">Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form> 
+        </div>
         <section  class="container seccionDonacion">
-            <div id="contenedorPadre" class="d-flex flex-column align-content-center justify-content-lg-between flex-lg-row flex-lg-wrap mt-5">
+            <div id="contenedorPadre">
         </section>
     </main> 
     <footer class="container-fluid d-flex flex-wrap justify-content-evenly align-items-center py-3 px-3 mb-0 mt-4 border-top fixed-bottom bg-white footerSize">
